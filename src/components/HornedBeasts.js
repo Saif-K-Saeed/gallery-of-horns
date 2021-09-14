@@ -26,7 +26,7 @@ class HornedBeasts extends React.Component {
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text> {this.props.description}
                             <br />
-                            Number Of Vote {`[${this.state.numberOfHorns}]`}
+                            Number Of Vote {`[${this.state.numberOfHorns} ❤]`}
                         </Card.Text>
                         <Button onClick={this.inceaseNumberOfHorns} variant="primary">Vote</Button>
                     </Card.Body>
