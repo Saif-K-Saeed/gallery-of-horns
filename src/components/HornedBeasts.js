@@ -1,7 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+import { Card, Button } from 'react-bootstrap/'
 import './horns.css';
 
 class HornedBeasts extends React.Component {
@@ -16,15 +15,17 @@ class HornedBeasts extends React.Component {
             numberOfHorns: this.state.numberOfHorns + 1
         })
     }
-    hornsClick = () => {
-       
+    showHorns = () => {
+
+        this.props.postShow(this.props.title);
+
     }
     render() {
         return (
             <div id='cartDiv'>
 
                 <Card style={{ width: '18rem', height: '28rem' }}>
-                    <Card.Img onClick={this.hornsClick} className='cartImg'  variant="top" src={this.props.image_url} alt={this.props.keyword}    />
+                    <Card.Img onClick={this.showHorns} className='cartImg' variant="top" src={this.props.image_url} alt={this.props.keyword} />
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
                         <Card.Text> {this.props.description}

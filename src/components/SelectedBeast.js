@@ -1,14 +1,31 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/';
-import Modal from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap/';
 
-class Selectedbeast extends React.Component {
+class SelectedBeast extends React.Component {
 
     render() {
         return (
-            <h3>Author: Saif Saeed</h3>
+
+            <Modal show={this.props.show} onHide={this.props.handleClose} className="Modal">
+                <Modal.Header closeButton>
+                    <Modal.Title>{this.props.dataModel.title}</Modal.Title>
+                </Modal.Header>
+
+                <Modal.Body>
+                    <img variant="top" src={this.props.dataModel.image_url} alt={this.props.dataModel.title}
+                        title={this.props.dataModel.title} style={{ width: '200px' }} />
+                    <p>{this.props.dataModel.description}</p>
+                </Modal.Body>
+
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={this.props.handleClose}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
         )
     }
 }
-export default Selectedbeast;
+export default SelectedBeast;
