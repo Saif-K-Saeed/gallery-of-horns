@@ -5,7 +5,7 @@ class Main extends React.Component {
     render() {
         return (
             <>
-                {this.props.data.map((element, index) => {
+                {this.props.all.map((element, index) => {
                     return (<HornedBeasts
                         key={index}
                         title={element.title}

@@ -21,11 +21,9 @@ class App extends React.Component {
 
 
   selectedCard = (title) => {
-    let dataModel = data.find(data => {
-      if (data.title === title) {
-        return data;
-      }
-    })
+    let dataModel = data.find(item => item.title===title
+      
+    )
     this.setState({
       show: true,
       dataModel: dataModel
